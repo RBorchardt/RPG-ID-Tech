@@ -1,0 +1,36 @@
+class mudcrab
+
+	int attackmudCrab
+{
+	int mudcrabHealth = 30;
+
+	int attackMDamage[3] = { 5, 10, 25 };
+	int attackHitChance[3] = { 100, 50, 10 };
+
+	int mudcrabChoice = rand() % 3;
+	hitRoll = rand() % 100;
+
+	switch (mudcrabChoice)
+	{
+	case 0:
+		cout << "The Mudcrab stares at you with his beady eyes" << endl;
+		break;
+	case 1:
+		cout << "The Mudecrab tries to run into you" << endl;
+		break;
+	case 2:
+		cout << "The Mudcrab jabs at you with his pincers" << endl;
+		break;
+	}
+
+	if (attackHitChance[mudcrabChoice] < hitRoll);
+	{
+		cout << "The Mudcrab hit you!" << endl;
+		playerHealth -= attackDamage[mudcrabChoice];
+	}
+	else
+	{
+		cout << "He misses!" << endl;
+	}
+
+};
