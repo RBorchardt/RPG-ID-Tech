@@ -1,0 +1,55 @@
+class ent
+
+	int attackent()
+
+{
+
+	int entHP = 30;
+
+	int attackDamage[3] = {};
+	int attackHitChance[3] = {};
+
+	int attackEDamage[3] = { 5, 10, 20 };
+	int attackHitEChance[3] = { 100, 75, 60 };
+
+	while (true)
+	{
+		int entChoice = rand() % 3;
+		hitRoll = rand() % 100;
+
+		switch (entChoice)
+		{
+		case 0:
+			cout << "The Ent roars at you!" << endl;
+			break;
+		case 1:
+			cout << "The Ent grabs you with his roots and crushes you!" << endl;
+			break;
+		case 2:
+			cout << "The Ent wips you with his branch!" << endl;
+			break;
+		}
+
+		if (attackHitEChance[entChoice] < hitRoll)
+		{
+			cout << " He hits you!" << endl;
+			playerHP -= attackEDamage[entChoice];
+		}
+		else
+		{
+			cout << "He misses" << endl;
+		}
+
+		if (playerHP < 1)
+		{
+			cout << "You are dead" << endl;
+			break;
+		}
+		if (entHP < 1)
+		{
+			cout << "You killed the Ent!" << endl;
+			break;
+		}
+	}
+	return 0;
+}
